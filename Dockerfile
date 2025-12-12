@@ -1,4 +1,4 @@
-FROM node:slim as base
+FROM node:slim AS base
 WORKDIR /app
 
 COPY package*.json ./

@@ -18,6 +18,7 @@ This is a Student Profile CRUD system that allows you to:
 - **Mongoose** - MongoDB object modeling
 - **dotenv** - Environment variable management
 - **CORS** - Cross-origin resource sharing
+- **Docker** - Containerization platform
 
 ## 📁 Project Structure
 
@@ -68,6 +69,29 @@ npm start
 ```
 
 The server will start on `http://localhost:3000`
+
+### Running with Docker
+
+For a containerized deployment:
+
+1. Build the Docker image:
+```bash
+docker build -t student-profile-api .
+```
+
+2. Run the container:
+```bash
+docker run -p 5000:5000 --env-file .env student-profile-api
+```
+
+Or use Docker Compose (if you have a `docker-compose.yml` file):
+```bash
+docker-compose up
+```
+
+The containerized app will be available at `http://localhost:5000`
+
+**Note:** The Dockerfile exposes port 5000, so make sure your `.env` file has `PORT=5000` when running with Docker.
 
 ## 📡 API Endpoints
 
